@@ -17,8 +17,8 @@ if (authData) {
 
     console.log('click');
 
-    ref.authWithOAuthPopup("google", function(error) {
-      console.log('auth');
+    ref.authWithOAuthPopup("google", function(error, authData) {
+      console.log(authData.token);
     });
   });
 
