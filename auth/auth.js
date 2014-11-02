@@ -17,7 +17,7 @@ if (authData) {
 
     console.log('click');
 
-    ref.authWithOAuthRedirect("google", function(error) {
+    ref.authWithOAuthPopup("google", function(error) {
       console.log('auth');
     });
   });
