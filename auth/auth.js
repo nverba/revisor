@@ -4,5 +4,5 @@ if (authData) {
   // user authenticated with Firebase
   console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
 } else {
-  //ref.authWithOAuthRedirect("google", function(error) {});
+  ref.authWithOAuthRedirect("google", function(error) {});
 }
