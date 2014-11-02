@@ -1,0 +1,18 @@
+{
+  "name": "revisor-gh-pages",
+  "version": "0.0.1",
+  "authors": [
+    "nverba <distantstate@gmail.com>"
+  ],
+  "description": "Learn & remember through revision",
+  "private": true,
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "firebase": "~1.1.3"
+  },
+  "install": {
+    "path": "libs"
+  }
+}
