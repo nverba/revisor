@@ -9,17 +9,12 @@ if (authData) {
   console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
 } else {
 
-  console.log('none');
-
   auth_input.style.display = 'block';
 
   signin.addEventListener("click", function () {
-
-    console.log('click');
 
     ref.authWithOAuthPopup("google", function(error, authData) {
       console.log(authData.token);
     });
   });
-
 }
