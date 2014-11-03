@@ -8,25 +8,32 @@
 
     <style>
 
-    #auth {
-      display: none;
+    body {
       text-align: center;
-      margin: 80px auto;
-      width: 200px;
-      height: 100px;
     }
 
     </style>
+
+    <script src="libs/firebase/firebase.js"></script>
 
   </head>
   <body>
 
     <div id="auth">
-      <button id="signin">Sign in with Google</button>
+      <button id="google">Sign in with Google</button>
     </div>
 
-    <script src="../libs/firebase/firebase.js"></script>
-    <script src="auth.js"></script>
+    <script>
+      var google = document.getElementById('google');
+      var ref    = new Firebase("https://revisor.firebaseio.com");
 
+      google.addEventListener("click", function () {
+
+        ref.authWithOAuthPopup("google", function(error, authData) {
+
+          console.log(authData.token);
+        });
+      });
+    </script>
   </body>
 </html>
