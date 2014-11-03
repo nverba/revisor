@@ -50,6 +50,10 @@
       function callRef(provider) {
         ref.authWithOAuthPopup(provider, function(error, authData) {
           console.log(authData.token);
+
+          chrome.runtime.sendMessage({ testRuntime: "true" }, function(response) {
+            consle.log('respond');
+          });
         });
       }
 
