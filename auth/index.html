@@ -8,26 +8,27 @@
 
     <script src="libs/firebase/firebase.js"></script>
 
+    <style>
+
+      button {
+        padding: 10px;
+        background-color: #6199df;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+      }
+
+    </style>
+
   </head>
   <body>
 
     <h2>Select a provider to log in</h2>
     <div id="auth">
       <button id="google">Sign in with Google</button>
+      <button id="twitter">Sign in with Twitter</button>
+      <button id="github">Sign in with Github</button>
     </div>
 
-    <script>
-      var google = document.getElementById('google');
-      var ref    = new Firebase("https://revisor.firebaseio.com");
-
-      google.addEventListener("click", function () {
-
-        ref.authWithOAuthPopup("google", function(error, authData) {
-
-          console.log(authData.token);
-
-        });
-      });
-    </script>
   </body>
 </html>
