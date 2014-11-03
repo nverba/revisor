@@ -10,6 +10,10 @@
 
     <style>
 
+      body {
+        font-family: sans-serif;
+      }
+
       button {
         padding: 10px;
         background-color: #6199df;
@@ -23,12 +27,33 @@
   </head>
   <body>
 
-    <h2>Select a provider to log in</h2>
+    <h3>Select a provider to log in</h3>
     <div id="auth">
       <button id="google">Sign in with Google</button>
       <button id="twitter">Sign in with Twitter</button>
       <button id="github">Sign in with Github</button>
     </div>
+
+    <script>
+
+      var providers = ['google', 'twitter', 'github'];
+      var ref       = new Firebase("https://revisor.firebaseio.com");
+
+      providers.forEach(function (provider) {
+        var button = document.getElementById(provider);
+
+        button.addEventListener("click", function () {
+          callRef(provider);
+        });
+      });
+
+      function callRef(provider) {
+        ref.authWithOAuthPopup(provider, function(error, authData) {
+          console.log(authData.token);
+        });
+      }
+
+    </script>
 
   </body>
 </html>
