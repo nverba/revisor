@@ -4,35 +4,18 @@
   <head>
 
     <meta charset="utf-8">
-    <title>revisor auth</title>
-
-    <style>
-
-    body {
-      text-align: center;
-    }
-
-    </style>
+    <title>revisor google auth</title>
 
     <script src="libs/firebase/firebase.js"></script>
 
   </head>
   <body>
 
-    <div id="auth">
-      <button id="google">Sign in with Google</button>
-    </div>
-
     <script>
-      var google = document.getElementById('google');
-      var ref    = new Firebase("https://revisor.firebaseio.com");
+      var ref = new Firebase("https://revisor.firebaseio.com");
 
-      google.addEventListener("click", function () {
-
-        ref.authWithOAuthPopup("google", function(error, authData) {
-
-          console.log(authData.token);
-        });
+      ref.authWithOAuthPopup("google", function(error, authData) {
+        console.log(authData.token);
       });
     </script>
   </body>
