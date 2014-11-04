@@ -48,13 +48,8 @@
       });
 
       function callRef(provider) {
-        ref.authWithOAuthRedirect(provider, function(error, authData) {
-
-          window.location.assign("https://jgpiophfohhpehfhebkaeaedgegmokma.chromiumapp.org/");
-
-          //chrome.runtime.sendMessage('jgpiophfohhpehfhebkaeaedgegmokma', { authData: authData });
-
-
+        ref.authWithOAuthPopup(provider, function(error, authData) {
+          chrome.runtime.sendMessage('jgpiophfohhpehfhebkaeaedgegmokma', { authData: authData });
         });
       }
 
