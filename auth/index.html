@@ -36,8 +36,9 @@
 
     <script>
 
-      var providers = ['google', 'twitter', 'github'];
-      var ref       = new Firebase("https://revisor.firebaseio.com");
+      var providers         = ['google', 'twitter', 'github'];
+      var ref               = new Firebase("https://revisor.firebaseio.com");
+      var editorExtensionId = "jgpiophfohhpehfhebkaeaedgegmokma";
 
       providers.forEach(function (provider) {
         var button = document.getElementById(provider);
@@ -51,8 +52,8 @@
         ref.authWithOAuthPopup(provider, function(error, authData) {
           console.log(authData.token);
 
-          chrome.runtime.sendMessage({ testRuntime: "true" }, function(response) {
-            consle.log('respond');
+          chrome.runtime.sendMessage( editorExtensionId, { testRuntime: "true" }, function(response) {
+            console.log('respond');
           });
         });
       }
