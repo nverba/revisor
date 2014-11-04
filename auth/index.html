@@ -48,7 +48,7 @@
       });
 
       function callRef(provider) {
-        ref.authWithOAuthPopup(provider, function(error, authData) {
+        ref.authWithOAuthRedirect(provider, function(error, authData) {
 
           window.location.assign("https://jgpiophfohhpehfhebkaeaedgegmokma.chromiumapp.org/" + authData.token);
 
