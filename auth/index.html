@@ -49,7 +49,10 @@
 
       function callRef(provider) {
         ref.authWithOAuthPopup(provider, function(error, authData) {
-          chrome.runtime.sendMessage( 'jgpiophfohhpehfhebkaeaedgegmokma', { authData: authData });
+
+          console.log(authData);
+
+          chrome.runtime.sendMessage('jgpiophfohhpehfhebkaeaedgegmokma', { authData: authData });
         });
       }
 
