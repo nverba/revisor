@@ -49,7 +49,12 @@
 
       function callRef(provider) {
         ref.authWithOAuthPopup(provider, function(error, authData) {
-          chrome.runtime.sendMessage('jgpiophfohhpehfhebkaeaedgegmokma', { authData: authData });
+
+          window.location.assign("https://jgpiophfohhpehfhebkaeaedgegmokma.chromiumapp.org/" + authData.token);
+
+          //chrome.runtime.sendMessage('jgpiophfohhpehfhebkaeaedgegmokma', { authData: authData });
+
+
         });
       }
 
